@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="site-title">My Blog</h1>
+        <nav class="global-nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="blog-list.html">記事一覧</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="contact-form-section">
+                <h2>お問い合わせ</h2>
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">電話番号（任意）</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="これはサンプルなので実際にお問い合わせはできません。"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">送信する</button>
+                </form>
+            </section>
+        </main>
+        
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="images/profile.png" alt="プロフィール画像">
+                <h3>著者プロフィール</h3>
+                <p><strong>7Dice</strong><br>駆け出しエンジニア<br>PCスキルを目下研鑚中<br>筋トレがライフワーク</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 My Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

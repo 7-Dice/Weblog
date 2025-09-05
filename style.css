@@ -1,0 +1,280 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    background-image:url(images/wall.png) ;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* --- レイアウトの基本 --- */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    /* スティッキー機能を追加 */
+    position: sticky;
+    top: 20px; /* 画面上部から20pxの場所に固定 */
+    align-self: flex-start; /* コンテナ内で上揃えにすることで余白をなくす */
+}
+
+/* --- ヘッダー --- */
+.header {
+    background: #fff;
+    color: yellow;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-image: url(images/header.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.site-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.global-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.global-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+.global-nav a:hover {
+    color: #007BFF;
+}
+
+/* --- 記事一覧 --- */
+.posts-list {
+    margin-bottom: 20px;
+}
+.posts-list h2 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.post {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    background: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
+/* --- サイドバー --- */
+.profile {
+    text-align: center;
+    margin-bottom: 0;
+}
+.profile p {
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* --- フッター --- */
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* --- お問い合わせフォーム --- */
+.contact-form-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    resize: vertical; /* 縦方向のみリサイズ可能にする */
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.submit-button:hover {
+    background: #0056b3;
+}
+
+/* --- 個別記事ページ --- */
+.post-single {
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 768px) {
+    /* コンテナのFlexboxの方向を縦積みに変更 */
+    .container {
+        flex-direction: column;
+        padding: 0 10px; /* 左右の余白を少し減らす */
+    }
+
+    /* メインコンテンツの幅を100%に */
+    .main-content {
+        flex: none; /* Flexboxの比率を無効化 */
+        width: 100%;
+        margin-bottom: 20px; /* サイドバーとの間に余白 */
+    }
+
+    /* サイドバーの幅を100%に */
+    .sidebar {
+        flex: none; /* Flexboxの比率を無効化 */
+        width: 100%;
+        position: static; /* stickyを解除し、通常の位置に */
+        top: auto;
+        right: auto;
+    }
+
+    /* ヘッダーとナビゲーションの調整 */
+    .header {
+        padding: 10px;
+    }
+
+    .site-title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .global-nav ul {
+        flex-direction: column; /* ナビゲーションを縦積みに */
+        align-items: center; /* 中央寄せ */
+        padding: 0;
+    }
+
+    .global-nav li {
+        margin: 5px 0;
+    }
+
+    /* 記事タイトルやフォームの文字サイズ調整 */
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .post-title {
+        font-size: 1.5em;
+    }
+
+    .contact-form-section,
+    .post-single {
+        padding: 20px;
+    }
+}
